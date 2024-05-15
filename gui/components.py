@@ -31,7 +31,7 @@ class ProgressBar:
         self.cancel_button = tk.Button(self.progress_window, text="Cancel", command=self.cancel)
         self.cancel_button.pack(pady=5)
 
-        self.generator = self.task(self.settings_container, self.update_progress, self.is_cancelled)
+        self.generator = self.task(self.update_progress, self.is_cancelled)
 
         self.cancelled = False
         self.progress_var.set(0)

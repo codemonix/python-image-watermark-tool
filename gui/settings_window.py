@@ -87,7 +87,9 @@ class OutSetting(tk.Toplevel):
 
     def open_folder(self, settings_container):
         self.path = filedialog.askdirectory()
-        settings_container.out_path = self.path
+        print_cmd(f"self.path {self.path}")
+        if self.path:
+            settings_container.out_path = self.path
 
     def open_txt_set_mnu(self, settings_container):
         if not hasattr(self, 'txt_setting_menu'):
