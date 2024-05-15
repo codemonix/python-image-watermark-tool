@@ -1,0 +1,33 @@
+{
+    "In Path Dir": "/media/saeid/Midium Drive/backup ssd portable/Nilay/Nilay Web/Products",
+    "In Path File": "./resources/img/600x500.jpg",
+    "Out Path": "/media/saeid/Midium Drive/backup ssd portable/Nilay/Nilay Web/temp_test",
+    "Choosen Font": "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+    "Font Size": 30,
+    "Text Pos.": [
+        50,
+        100
+    ],
+    "Watermarked Text": "wewew",
+    "Allowed Filetypes": [
+        "jpg",
+        "png"
+    ],
+    "Text Color": [
+        [
+            0,
+            0,
+            0
+        ],
+        "#000000"
+    ],
+    "Text Background Color": [
+        [
+            255,
+            255,
+            255
+        ],
+        "#ffffff"
+    ],
+    "Transparency Level": 255
+}
