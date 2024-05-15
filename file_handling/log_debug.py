@@ -8,8 +8,3 @@ def print_cmd(note=None):
     filename = filename.rsplit('/', 1)[1]
     print(f"file: {filename} -> {line_number} -> {note}")
 
-
-
-test = "jwqiw"
-print_cmd()
-

@@ -18,7 +18,7 @@ class DataContainer:
         "Choosen Font": get_font_list()[0],
         "Font Size": 30 ,
         "Text Pos.": (50, 100),
-        "Watermarked Text": "Sample Text",
+        "Watermarked Text": "",
         "Allowed Filetypes": ["jpg", "png"],
         "Text Color": ((0, 0, 0), '#000000'),
         "Text Background Color": ((255, 255, 255), '#ffffff'),

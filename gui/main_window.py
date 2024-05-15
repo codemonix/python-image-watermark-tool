@@ -4,9 +4,9 @@ from gui.settings_window import TopSetting
 from PIL import Image, ImageTk
 from gui.ui_updater import update_main_window
 from gui.components import ProgressBar
-from utils.file_handling import save_settings, load_settings, list_files_dir, image_save
+from file_handling.file_handling import save_settings, load_settings, list_files_dir, image_save
 from core.image_processor import txt_image_watermark
-from utils.log_debug import print_cmd
+from file_handling.log_debug import print_cmd
 
 
 class MainWindow(tk.Frame):
@@ -19,7 +19,11 @@ class MainWindow(tk.Frame):
     def create_widget(self):
         self.text_frame = tk.Frame(self.master)
         self.text_frame.place(relx=0.01, rely=0.01, width=300, height=25)
-        self.w_text = tk.Entry(self.text_frame)
+        self.placeholder_text = "Enter your text here"
+        self.w_text = tk.Entry(self.text_frame, fg="gray")
+        self.w_text.insert(0, self.placeholder_text)
+        self.w_text.bind('<FocusIn>', self.on_w_text_clicked)
+        self.w_text.bind('<FocusOut>', self.on_w_text_leave)
         self.w_text.pack(fill="x", expand=True, side="left")
         self.butt_frame = tk.Frame(self.master, bd=2)
         self.butt_frame.place(x=310, rely=0.01, width=200, height=25)
@@ -51,9 +55,26 @@ class MainWindow(tk.Frame):
 
         update_main_window(self, self.settings_container)
 
+    def on_w_text_clicked(self, event):
+        if self.w_text.get() == self.placeholder_text:
+            self.w_text.delete(0, tk.END)
+            self.w_text.config(fg='black')
+            self.settings_container.text_to_write = ""
+            print_cmd("Entry text black")
+
+    def on_w_text_leave(self, event):
+        if not self.w_text.get():
+            self.w_text.insert(0, self.placeholder_text)
+            self.w_text.config(fg='gray')
+            self.settings_container.text_to_write = ""
+            print_cmd("Entry text gray")
+        else:
+            self.settings_container.text_to_write = self.w_text.get()
+
+
+
     def open_settings(self):
         if not hasattr(self, 'settings_menu'):
-            self.settings_container.text_to_write = self.w_text.get()
             self.settings_menu = TopSetting(self, self.master, 
                                             settings_container=self.settings_container)
             self.settings_menu.protocol('WM_DELETE_WINDOW', 
@@ -72,7 +93,8 @@ class MainWindow(tk.Frame):
             del self.settings_menu
 
     def start_watermark(self, action, process_callback=None, cancel_callack=None):
-        self.settings_container.text_to_write = self.w_text.get()
+        if self.w_text.get() != self.placeholder_text:
+            self.settings_container.text_to_write = self.w_text.get()
         if action == 1:
             final_image = txt_image_watermark(self.settings_container.in_path_file, self.settings_container)
             file_name = self.settings_container.in_path_file.rsplit("/", 1)[1]

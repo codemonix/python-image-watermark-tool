@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import threading
-from utils.log_debug import print_cmd
+from file_handling.log_debug import print_cmd
 
 
 class ProgressBar:

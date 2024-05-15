@@ -6,7 +6,7 @@ from tkinter import filedialog, colorchooser, ttk
 # from core.test_img import print_setting_test_img
 from gui.ui_updater import update_main_window, update_text_settings_menu
 from core.image_processor import txt_image_watermark
-from utils.log_debug import print_cmd
+from file_handling.log_debug import print_cmd
 
 
 
@@ -207,6 +207,7 @@ class TextSetting(tk.Toplevel):
         self.trans_select_spin = tk.Spinbox(self, from_=0, to=255, width=3, textvariable=self.trans_lvl_var,
             command=lambda: self.trans_select_spin_change(settings_container))
         self.trans_select_spin.grid(column=8, row=14, padx=10, pady=5, sticky="w")
+        update_text_settings_menu(self, settings_container)
 
         # self.bind("<Escape>", self.close_window)
         # self.trans_select_spin.bind(
