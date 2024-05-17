@@ -31,19 +31,12 @@ class DataContainer:
         if cls._instance is None:
             cls._instance = super().__new__(cls)
             cls.in_path_dir = cls.default_settings["In Path Dir"]
-            # cls.in_path.set("Input file or folder")
             cls.in_path_file = cls.default_settings["In Path File"]
-            # cls.in_path_txt = tk.StringVar()
             cls.out_path = cls.default_settings["Out Path"]
-            # cls.in_path_txt = None
             cls.font_list = get_font_list()
-            # cls.font_type = tk.StringVar()
-            # cls.choosen_font = cls.font_list[10]
             cls.choosen_font = cls.font_list[0][0]
-            # print(f"forn_type settings.py ->19 {self.font_type.get()}")
             cls.font_size = cls.default_settings["Font Size"]
             cls.txt_poz = cls.default_settings["Text Pos."]
-            # self.font = ImageFont.truetype(self.font_type.get(), self.font_zise.get())
             cls.text_to_write = cls.default_settings["Watermarked Text"]
             cls.allowed_ext = cls.default_settings["Allowed Filetypes"]
             cls.txt_color = cls.default_settings["Text Color"]

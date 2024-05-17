@@ -4,9 +4,11 @@
 import tkinter as tk
 from tkinter import filedialog, colorchooser, ttk
 # from core.test_img import print_setting_test_img
+from gui.components import DragDropWidget
 from gui.ui_updater import update_main_window, update_text_settings_menu
-from core.image_processor import txt_image_watermark
+from core.image_processor import GetPic, txt_image_watermark
 from file_handling.log_debug import print_cmd
+from utils.color_utils import color_add_trans_lvl
 
 
 
@@ -209,6 +211,8 @@ class TextSetting(tk.Toplevel):
         self.trans_select_spin = tk.Spinbox(self, from_=0, to=255, width=3, textvariable=self.trans_lvl_var,
             command=lambda: self.trans_select_spin_change(settings_container))
         self.trans_select_spin.grid(column=8, row=14, padx=10, pady=5, sticky="w")
+        self.pos_button = tk.Button(self, text="Place Text", command=lambda: self.drag_drop_text_pos(settings_container))
+        self.pos_button.grid(column=5, row=12)
         update_text_settings_menu(self, settings_container)
 
         # self.bind("<Escape>", self.close_window)
@@ -261,6 +265,16 @@ class TextSetting(tk.Toplevel):
     def font_size_spin_change(self, settings_container):
         settings_container.font_size = self.fnt_size_spin_var.get()
 
+    def drag_drop_text_pos(self, settings_container):
+        self.drag_drop_window = tk.Toplevel(self)
+        self.drag_drop_window.title("Select Text Position")
+        fg_color = color_add_trans_lvl(settings_container.txt_color, settings_container.txt_trans_lvl)
+        bg_color = color_add_trans_lvl(settings_container.txt_bg_color, settings_container.txt_trans_lvl)
+        txt_image = GetPic(settings_container.text_to_write, settings_container.choosen_font, 
+                           settings_container.font_size, fg_color, bg_color).create_image_from_txt()[0]
+        self.select_pos_drag_drop = DragDropWidget(self.drag_drop_window, txt_image, settings_container.in_path_file)
+        print_cmd(f"drag drop pos is{self.select_pos_drag_drop.position}")
+
     def prnt_setting(self, event, settings_container):
         print_cmd("---------ctrl+p output -------")
         # print(f"text color:{settings_container.txt_color}")
@@ -270,8 +284,8 @@ class TextSetting(tk.Toplevel):
         # print(f"font list 12: {settings_container.font_list[12].lower()+'.ttf'}")
         # print(f"n parameter:{self.n.get()}")
         print_cmd(settings_container)
-        print_cmd(f"{txt_image_watermark(settings_container.in_path_file, settings_container).show()}")
-        
+        # print_cmd(f"{txt_image_watermark(settings_container.in_path_file, settings_container).show()}")
+        print_cmd(self.select_pos_drag_drop.position)
         # print(f"font size setting: {settings_container.font_size}")
         print_cmd("-"*10)
         # print_setting_test_img(settings_container)

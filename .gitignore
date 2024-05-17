@@ -97,6 +97,9 @@ $RECYCLE.BIN/
 
 # MySQL Workbench
 *.mwb
+
+# Project specific files
 resources/temp
 20210121*.jpg
 test*.*
+setting_rangi
