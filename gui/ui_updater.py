@@ -1,14 +1,15 @@
 
 from PIL import Image, ImageTk, ImageFont
-from core.image_processor import get_scaled_image
+from core.image_processor import get_scaled_image, txt_image_watermark
 from tkinter import font
 import tkinter as tk
 from file_handling.log_debug import print_cmd
 
 
 def update_main_window(main_window, settings_container):
-    image = Image.open(settings_container.in_path_file)
-    photo = ImageTk.PhotoImage(get_scaled_image(image, 500))
+    # image = Image.open(settings_container.in_path_file)
+    image = txt_image_watermark(settings_container.in_path_file, settings_container)
+    photo = ImageTk.PhotoImage(get_scaled_image(image, 600))
     # path_text_style = font.Font(family=settings_container.choosen_font, 
     #                             size=settings_container.font_size)
     main_window.path_text.config(text=settings_container.in_path_file.rsplit('/', 1)[1])
@@ -37,3 +38,8 @@ def update_text_settings_menu(text_setting_menu, settings_container):
     text_setting_menu.txt_color_label.config(font=(font_name, 14), fg=settings_container.txt_color[1], 
                                              bg=settings_container.txt_bg_color[1])
     
+def next_pic(files, settings_container):
+    pass
+
+def previous_pic(files, settings_container):
+    pass

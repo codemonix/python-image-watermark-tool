@@ -3,10 +3,10 @@
     "In Path File": "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/20210121_145200.jpg",
     "Out Path": "./resources/temp",
     "Choosen Font": "/usr/share/fonts/truetype/malayalam/Meera-Regular.ttf",
-    "Font Size": 30,
+    "Font Size": 151,
     "Text Pos.": [
-        50,
-        100
+        1113,
+        1148
     ],
     "Watermarked Text": "qweqweqwe",
     "Allowed Filetypes": [
@@ -23,11 +23,11 @@
     ],
     "Text Background Color": [
         [
-            156,
-            116,
+            240,
+            236,
             193
         ],
-        "#9c74c1"
+        "#f0ecc1"
     ],
-    "Transparency Level": 129
+    "Transparency Level": 181
 }

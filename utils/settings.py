@@ -12,11 +12,12 @@ class DataContainer:
 
     default_settings = {
         "In Path Dir": "",
+        "File List": None ,
         "In Path File": "./resources/img/600x500.jpg",
         "Out Path": "./resources/temp",
         "Font List" : get_font_list(),
         "Choosen Font": get_font_list()[0],
-        "Font Size": 30 ,
+        "Font Size": 150 ,
         "Text Pos.": (50, 100),
         "Watermarked Text": "",
         "Allowed Filetypes": ["jpg", "png"],
@@ -31,6 +32,7 @@ class DataContainer:
         if cls._instance is None:
             cls._instance = super().__new__(cls)
             cls.in_path_dir = cls.default_settings["In Path Dir"]
+            cls.file_list = cls.default_settings["File List"]
             cls.in_path_file = cls.default_settings["In Path File"]
             cls.out_path = cls.default_settings["Out Path"]
             cls.font_list = get_font_list()

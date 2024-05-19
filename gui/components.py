@@ -63,12 +63,12 @@ class ProgressBar:
 
 
 class DragDropWidget:
-    def __init__(self, parent, drag_image, backgroung_image) -> tk.Canvas:
+    def __init__(self, parent, drag_image : Image, bg_image : Image) -> tk.Canvas:
         self.parent = parent
-
+        self.bg_image = bg_image
         # canvas backround image
-        self.bg_image = Image.open(backgroung_image)
-        self.background_image = ImageTk.PhotoImage(self.bg_image)
+        # self.bg_image = Image.open(backgroung_image)
+        self.background_image = ImageTk.PhotoImage(bg_image)
 
         # Image which is going to be dragged over background image
         self.image = ImageTk.PhotoImage(drag_image)
