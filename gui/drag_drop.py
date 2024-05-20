@@ -1,5 +1,4 @@
-
-# from text_to_pic import GetPic
+"""This file is the component which generates progress bar"""
 import tkinter as tk
 from PIL import ImageTk, Image
 from file_handling.file_handling import print_cmd
@@ -41,17 +40,13 @@ class DragDropWidget:
         self.drag_data["item"] = self.canvas.find_closest(event.x, event.y)[0]
         self.drag_data["x"] = event.x
         self.drag_data["y"] = event.y
-        # print_cmd("token pressed")
 
     def on_token_release(self, event):
         coords = self.canvas.coords("token")
-        # print(coords)
-        # print(self.drag_data)
         self.drag_data["item"] = None
         self.position = coords
-        print_cmd(self.position)
+        print_cmd(f"drag position-> {self.position}")
         return coords
-        # print_cmd("token released")
 
     def on_token_motion(self, event):
         if self.drag_data["item"]:
@@ -60,7 +55,6 @@ class DragDropWidget:
             self.canvas.move(self.drag_data["item"], delta_x, delta_y)
             self.drag_data["x"] = event.x
             self.drag_data["y"] = event.y
-            # print_cmd("tpken draged")
 
 # Example usage
 # if __name__ == "__main__":
@@ -70,7 +64,5 @@ class DragDropWidget:
 #     output = GetPic("AAAAA", "Arial.ttf", 100).create_image_from_txt()
 #     image = output[0]
 
-
-#     # Replace 'image_path' with the path to your image
 #     widget = DragDropWidget(root, image, "test.png")
 #     root.mainloop()

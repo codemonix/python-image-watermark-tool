@@ -1,14 +1,14 @@
+""" This module handles all file related functionalities including save
+, load, get file list from a directory and ..."""
+
 import os
 import json
 from tkinter import filedialog, messagebox
-from PIL import Image
 from file_handling.log_debug import print_cmd
 
 class FileManager:
-
     _instance = None
-    # _file_list = None
-
+    
     def __new__(cls):
         if cls._instance is None:
             cls._instance = super(FileManager, cls).__new__(cls)
@@ -39,7 +39,6 @@ class FileManager:
         else:
             return False
 
-
     def save_settings(self, settings_container):
         filename = filedialog.asksaveasfile(confirmoverwrite=True)
         try:
@@ -63,19 +62,14 @@ class FileManager:
             print(f"file_handling 25 -> {e}")
             return e
         
-            
-
-            # return settings_dict
-
     def image_save(self, image, file_path):
-        
         image = image.convert('RGB')
         print(f"file_handling.py 26 -> {file_path} ")
         if os.path.exists(file_path):
             if messagebox.askokcancel("Caution", "Do you want to overwrite it?"):
                 image.save(file_path)
         else:
-            print(f"file_handling.py 33 -> image save else")
+            print("file_handling.py 33 -> image save else")
             try:
                 image.save(file_path)
             except Exception as e:

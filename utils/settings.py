@@ -51,6 +51,7 @@ class DataContainer:
 
     def set_settings(self, settings_dict):
         self.in_path_dir = settings_dict["In Path Dir"]
+        self.file_list = settings_dict["File List"]
         self.in_path_file = settings_dict["In Path File"]
         self.out_path = settings_dict["Out Path"]
         self.font_list = get_font_list()
@@ -67,6 +68,7 @@ class DataContainer:
     def to_dict(self) -> dict:
                 
         self.current_setting ={"In Path Dir": self.in_path_dir,
+        "File List": self.file_list,
         "In Path File": self.in_path_file,
         "Out Path": self.out_path,
         "Choosen Font" : self.choosen_font,
@@ -82,6 +84,7 @@ class DataContainer:
 
     def __str__(self) -> str:
         self.current_setting ={"In Path Dir": self.in_path_dir,
+            "File List": self.file_list,
             "In Path File": self.in_path_file,
             "Out Path": self.out_path,
             "Choosen Font" : self.choosen_font,

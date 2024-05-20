@@ -1,5 +1,5 @@
-
-from PIL import Image, ImageFont, ImageDraw, ImageOps, ImageTk
+""" This file is responsile for processing images including watermarking and scaling"""
+from PIL import Image, ImageFont, ImageDraw, ImageOps
 from file_handling.log_debug import print_cmd
 from utils.color_utils import color_add_trans_lvl
 
@@ -14,7 +14,8 @@ def txt_image_watermark(file, settings_container) -> Image.Image:
     image = ImageOps.exif_transpose(image)
     print_cmd(f"{settings_container.font_size}")
 
-    font = ImageFont.truetype(font=settings_container.choosen_font, size=settings_container.font_size)
+    font = ImageFont.truetype(font=settings_container.choosen_font, 
+                              size=settings_container.font_size)
 
     base_img = Image.new("RGBA", image.size, (255, 255, 255, 0))
 
@@ -22,8 +23,10 @@ def txt_image_watermark(file, settings_container) -> Image.Image:
 
     bbox = draw.textbbox(settings_container.txt_poz, 
                             settings_container.text_to_write, font=font)
-    print_cmd(color_add_trans_lvl(settings_container.txt_bg_color, settings_container.txt_trans_lvl))
-    fill_bg = settings_container.txt_bg_color[0] + (settings_container.txt_trans_lvl,)
+    print_cmd(color_add_trans_lvl(settings_container.txt_bg_color, 
+                                  settings_container.txt_trans_lvl))
+    fill_bg = settings_container.txt_bg_color[0] + \
+        (settings_container.txt_trans_lvl,)
     print_cmd(fill_bg)
     draw.rectangle(bbox, fill=fill_bg)
     fill_fg = settings_container.txt_color[0] + (settings_container.txt_trans_lvl,)
@@ -48,9 +51,7 @@ class GetPic():
         font = ImageFont.truetype(font=self.font, size=self.size)
         dummy_immage = Image.new('RGBA', (1,1))
         draw = ImageDraw.Draw(dummy_immage)
-        
         #Get the text image size
-        # text_size = draw.textsize(self.text, font=self.font )
         bbox = draw.textbbox((0,0), text=self.text, font=font)
 
         text_width = bbox[2] - bbox[0]

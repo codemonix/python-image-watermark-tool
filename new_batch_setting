@@ -1,0 +1,51 @@
+{
+    "In Path Dir": "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img",
+    "File List": [
+        "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/20210121_144556.jpg",
+        "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/20210121_145200.jpg",
+        "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/20210121_145647.jpg",
+        "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/20210121_151319.jpg",
+        "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/20210121_151424.jpg",
+        "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/20210121_151709.jpg",
+        "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/20210121_151741.jpg",
+        "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/20210121_151754.jpg",
+        "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/20210121_152057.jpg",
+        "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/20210121_153057.jpg",
+        "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/20210121_153611.jpg",
+        "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/20210121_154125.jpg",
+        "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/20210121_154202.jpg",
+        "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/600x500.jpg",
+        "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/test.jpg",
+        "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/test1.jpg"
+    ],
+    "In Path File": "/media/saeid/Midium Drive/py_apps/img_auto_edit/resources/img/20210121_145647.jpg",
+    "Out Path": "./resources/temp",
+    "Choosen Font": "/usr/share/fonts/truetype/msttcorefonts/Verdana_Bold_Italic.ttf",
+    "Font Size": 150,
+    "Text Pos.": [
+        50,
+        100
+    ],
+    "Watermarked Text": "ggggg",
+    "Allowed Filetypes": [
+        "jpg",
+        "png"
+    ],
+    "Text Color": [
+        [
+            0,
+            0,
+            0
+        ],
+        "#000000"
+    ],
+    "Text Background Color": [
+        [
+            255,
+            255,
+            255
+        ],
+        "#ffffff"
+    ],
+    "Transparency Level": 255
+}
