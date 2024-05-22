@@ -1,0 +1,34 @@
+{
+    "In Path Dir": "",
+    "File List": null,
+    "In Path File": "./resources/img/600x500.jpg",
+    "Out Path": "./resources/temp",
+    "Choosen Font": "/usr/share/fonts/truetype/liberation2/LiberationSerif-Bold.ttf",
+    "Font Size": 150,
+    "Text Pos.": [
+        50,
+        100
+    ],
+    "Watermarked Text": "",
+    "Allowed Filetypes": [
+        "jpg",
+        "png"
+    ],
+    "Text Color": [
+        [
+            0,
+            0,
+            0
+        ],
+        "#000000"
+    ],
+    "Text Background Color": [
+        [
+            255,
+            255,
+            255
+        ],
+        "#ffffff"
+    ],
+    "Transparency Level": 255
+}

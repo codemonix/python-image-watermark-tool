@@ -183,10 +183,10 @@ class MainWindow(tk.Frame):
             update_main_window(self, self.settings_container)
             messagebox.showinfo("Load Setting", "Setting file loaded and set")
         else:
-            messagebox.showerror("An error has occurred")
+            messagebox.showerror("An error has occurred", "Setting file has not been selected \n Pleae Try again!")
 
     def next_file(self):
-        if self.settings_container.in_path_file is None or self.settings_container.in_path_file == "":
+        if self.settings_container.in_path_dir is None or self.settings_container.in_path_dir == "":
             return
         print_cmd(f"next file {self.file_list_index} , {len(self.settings_container.file_list)}")
         if self.file_list_index < len(self.settings_container.file_list) - 1:
@@ -196,8 +196,8 @@ class MainWindow(tk.Frame):
         update_main_window(self, self.settings_container)
 
     def previous_file(self):
-        if self.settings_container.in_path_file is None or \
-            self.settings_container.in_path_file == "":
+        if self.settings_container.in_path_dir is None or \
+            self.settings_container.in_path_dir == "":
             return
         if self.file_list_index > 0 :
             self.file_list_index -= 1

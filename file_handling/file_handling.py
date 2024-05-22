@@ -8,7 +8,7 @@ from file_handling.log_debug import print_cmd
 
 class FileManager:
     _instance = None
-    
+
     def __new__(cls):
         if cls._instance is None:
             cls._instance = super(FileManager, cls).__new__(cls)
@@ -59,12 +59,12 @@ class FileManager:
                 settings_container.set_settings(settings_dict)
                 return True
         except Exception as e:
-            print(f"file_handling 25 -> {e}")
+            print_cmd(f" -> {e}")
             return e
         
     def image_save(self, image, file_path):
         image = image.convert('RGB')
-        print(f"file_handling.py 26 -> {file_path} ")
+        print_cmd(f"file_handling.py 26 -> {file_path} ")
         if os.path.exists(file_path):
             if messagebox.askokcancel("Caution", "Do you want to overwrite it?"):
                 image.save(file_path)

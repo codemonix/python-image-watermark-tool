@@ -1,0 +1,34 @@
+{
+    "In Path Dir": "",
+    "File List": null,
+    "In Path File": "./resources/img/600x500.jpg",
+    "Out Path": "./resources/temp",
+    "Choosen Font": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+    "Font Size": 100,
+    "Text Pos.": [
+        50,
+        100
+    ],
+    "Watermarked Text": "ssss",
+    "Allowed Filetypes": [
+        "jpg",
+        "png"
+    ],
+    "Text Color": [
+        [
+            200,
+            0,
+            0
+        ],
+        "#c80000"
+    ],
+    "Text Background Color": [
+        [
+            255,
+            255,
+            180
+        ],
+        "#ffffb4"
+    ],
+    "Transparency Level": 120
+}

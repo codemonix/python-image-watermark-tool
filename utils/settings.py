@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import font
 from utils.font_utils import get_font_list
+from file_handling.log_debug import print_cmd
 
 
 
@@ -63,6 +64,7 @@ class DataContainer:
         self.txt_color = (tuple(settings_dict["Text Color"][0]), settings_dict["Text Color"][1])
         self.txt_bg_color = (tuple(settings_dict["Text Background Color"][0]), settings_dict["Text Background Color"][1])
         self.txt_trans_lvl = settings_dict["Transparency Level"]
+        print_cmd("End of set settings")
         return True
 
     def to_dict(self) -> dict:
