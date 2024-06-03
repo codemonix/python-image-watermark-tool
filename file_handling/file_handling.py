@@ -47,7 +47,7 @@ class FileManager:
                 return True
             return None
         except Exception as e:
-            print(f"file_handling.py 15 -> {e}")
+            print_cmd(e)
             return False
 
     def load_settings(self, settings_container):
@@ -69,7 +69,7 @@ class FileManager:
             if messagebox.askokcancel("Caution", "Do you want to overwrite it?"):
                 image.save(file_path)
         else:
-            print("file_handling.py 33 -> image save else")
+            print_cmd("image save else")
             try:
                 image.save(file_path)
             except Exception as e:
