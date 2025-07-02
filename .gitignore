@@ -105,3 +105,15 @@ test*.*
 setting_rangi
 watermarker-app.tar
 
+.myenv/lib64
+.myenv/pyvenv.cfg
+.myenv/bin/activate
+.myenv/bin/activate.csh
+.myenv/bin/activate.fish
+.myenv/bin/Activate.ps1
+.myenv/bin/pip
+.myenv/bin/pip3
+.myenv/bin/pip3.10
+.myenv/bin/python
+.myenv/bin/python3
+.myenv/bin/python3.10

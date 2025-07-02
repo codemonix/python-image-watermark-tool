@@ -1,3 +1,5 @@
+#!/media/saeid/Midium Drive/py_apps/img_auto_edit/.myenv/bin/python3
+
 """ Here is the main entry point of application
 """
 import tkinter as tk
